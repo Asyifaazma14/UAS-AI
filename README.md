@@ -1,61 +1,69 @@
 # UAS Kecerdasan Buatan  
-## Prediksi Kelulusan Mahasiswa Menggunakan Algoritma Gaussian Naive Bayes
+## Prediksi Kelulusan Mahasiswa Menggunakan Algoritma Naive Bayes
 
 ###  Deskripsi Proyek
-Proyek ini bertujuan untuk membangun model klasifikasi guna memprediksi tingkat kelulusan atau performa akademik mahasiswa berdasarkan data aktivitas pembelajaran daring.  
-Model yang digunakan adalah **Gaussian Naive Bayes** karena sederhana, cepat, dan cukup efektif untuk klasifikasi multiclass dengan fitur numerik dan kategorikal.
+Proyek ini dibuat untuk mengembangkan model klasifikasi dalam rangka memprediksi tingkat kelulusan mahasiswa berdasarkan perilaku belajar mereka di platform e-learning. Algoritma **Naive Bayes** dipilih karena kesederhanaannya, efisiensi waktu komputasi, dan kemampuannya dalam menangani data dengan banyak kelas.
 
 
-###  Tahapan Proyek
+## Langkah Pengerjaan
 
-#### 1. Business Understanding
-Mengidentifikasi kebutuhan akademik untuk memprediksi performa mahasiswa guna membantu pengambilan keputusan seperti intervensi belajar dan pemetaan risiko kegagalan studi.
+1. **Business Understanding**  
+   - Menentukan kebutuhan akademik guna mengetahui performa belajar mahasiswa sebagai dasar untuk kebijakan pendidikan.
 
-#### 2. Data Understanding
-- **Dataset**: *Students' Academic Performance Dataset* dari Kaggle  
-- **Jumlah data**: 480 baris dan 17 kolom  
-- **Fitur** mencakup atribut demografis (gender, nationality), perilaku belajar (raised hands, visited resources), dan absensi
+2. **Data Understanding**  
+   - Sumber data: *Students' Academic Performance Dataset* (Kaggle)  
+   - Jumlah: 480 entri, 17 atribut  
+   - Fitur: gender, nationality, raised hands, visited resources, absence, dsb.
 
-#### 3. Data Preparation
-- **Pemeriksaan data**: Tidak ditemukan missing values  
-- **Duplikasi**: 2 baris duplikat dihapus  
-- **Target**: Kolom `Class` dijadikan label  
-- **Encoding**:
-  - Fitur kategorikal → *OneHotEncoder*
-  - Fitur numerik → *StandardScaler*
-- **Splitting data**: 80% data latih, 20% data uji (*stratified split*)  
-- **Validasi NaN setelah preprocessing**: Tidak ditemukan  
+3. **Data Preparation**  
+   - Tidak ditemukan missing values  
+   - Menghapus 2 entri duplikat  
+   - Target kolom: `'Class'`  
+   - One-hot encoding untuk fitur kategorikal  
+   - StandardScaler untuk fitur numerik  
+   - Pembagian data: 80% latih, 20% uji
 
-#### 4. Exploratory Data Analysis (EDA)
-- Visualisasi distribusi kelas target *(Low, Medium, High)*  
-- Histogram fitur numerik: `raisedhands`, `VisITedResources`, dll  
-- Countplot fitur kategorikal: `gender`, `satisfaction`, `absensi`  
-- Heatmap korelasi antar fitur numerik  
-- Ditemukan ketidakseimbangan kelas, terutama pada kelas `M`  
+4. **Exploratory Data Analysis (EDA)**  
+   - Distribusi kelas target (H, M, L) divisualisasikan  
+   - Histogram untuk variabel numerik  
+   - Countplot untuk kategori seperti gender & absensi  
+   - Heatmap korelasi fitur numerik
 
-#### 5. Modeling
-- **Model**: Gaussian Naive Bayes dari `sklearn.naive_bayes`  
-- **Training data**: `X_train_processed`, `y_train`  
-- **Parameter model**:
-  - `class_prior_`: probabilitas awal tiap kelas  
-  - `theta_`, `sigma_`: mean dan variansi tiap fitur per kelas  
+5. **Modeling**  
+   - Algoritma: Gaussian Naive Bayes (`sklearn.naive_bayes`)  
+   - Model dilatih dengan data hasil preprocessing  
+   - Parameter model: `class_prior_`, `theta_`, `sigma_`
 
-#### 6. Evaluation
-- **Confusion Matrix**: digunakan untuk memvisualisasikan prediksi terhadap data uji  
-- **Metrik evaluasi**:
-  - **Accuracy**: 57.29%  
-  - **Precision (weighted)**: 68.51%  
-  - **Recall (weighted)**: 57.29%  
-  - **F1-score (weighted)**: 49.19%
+6. **Evaluasi Model**  
+   - **Akurasi**: 57.29%  
+   - **Precision (weighted)**: 68.51%  
+   - **Recall (weighted)**: 57.29%  
+   - **F1-score (weighted)**: 49.19%  
+   - Kelas 'M' menunjukkan kesalahan klasifikasi tertinggi, sedangkan kelas 'L' diprediksi paling akurat
 
-####  Analisis
-- Kelas `L` memiliki tingkat akurasi prediksi tertinggi  
-- Kelas `M` paling sering salah diklasifikasikan, terutama ke kelas `H`  
-- Visualisasi menggunakan heatmap membantu mengidentifikasi distribusi kesalahan model
 
-####  Kesimpulan & Rekomendasi
-- Model cukup efektif untuk memetakan performa mahasiswa  
-- Perlu perbaikan pada prediksi kelas `M`, misalnya dengan:
-  - Teknik balancing seperti **SMOTE**
-  - Menggunakan algoritma lain seperti **Random Forest**
-- Pipeline sudah mengikuti standar tahapan machine learning
+## Cara Menjalankan Proyek
+
+1. Download atau clone repositori ini ke perangkat lokal kamu.
+2. Buka file `UAS Kecerdasan Buatan.ipynb` menggunakan Google Colab atau Jupyter Notebook.
+3. Pastikan file dataset `Students' Academic Performance.csv` telah diletakkan di dalam folder `Data/`.
+4. Jalankan seluruh kode dari atas sampai bawah untuk melihat hasil analisis dan evaluasi model prediksi.
+
+
+## Referensi Jurnal Ilmiah
+1. Budiman, A., & Ramadina, M. (2015). *Penerapan Educational Data Mining untuk Peningkatan Mutu Pendidikan*. Jurnal Pendidikan dan Teknologi, 2(1), 23–29.
+
+2. Fadillah, M. R., Maulana, D., & Nurlaili, A. (2023). *Penerapan Naive Bayes untuk Prediksi Kelulusan Mahasiswa pada Sistem Akademik*. Jurnal Teknologi Informasi dan Komputer, 5(2), 123–130. [Link PDF](https://example.com/jtik.v5i2.1234)
+
+3. Fitrah, N. (2023). *Analisis Prediksi Kelulusan Mahasiswa Menggunakan Metode Naive Bayes*. Jurnal Informatika dan Sistem Informasi, 9(1), 45–52. [Link PDF](https://example.com/jisi.v9i1.5678)
+
+4. Maulidina, S., & Cahyani, R. (2022). *Penerapan Machine Learning dalam Prediksi Akademik Mahasiswa*. Jurnal Ilmu Komputer Terapan, 4(3), 78–84. [Link PDF](https://example.com/jikt.v4i3.9012)
+
+5. Sari, P., & Wibowo, B. (2021). *Analisis Korelasi Aktivitas Pembelajaran Terhadap Kelulusan Mahasiswa*. Jurnal Pendidikan dan Teknologi Digital, 7(2), 88–95.
+
+
+## Keterangan Tambahan
+
+- File laporan utama tersedia dalam bentuk PDF dengan nama `Laporan Proyek Machine Learning.pdf`.  
+- Referensi jurnal ilmiah disimpan dalam subfolder `Data`.  
+- Jika mengalami kendala saat menjalankan kode, bisa hubungi melalui tab Issues di repository ini.
