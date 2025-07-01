@@ -40,7 +40,13 @@ Proyek ini dibuat untuk mengembangkan model klasifikasi dalam rangka memprediksi
    - **Recall (weighted)**: 57.29%  
    - **F1-score (weighted)**: 49.19%  
    - Kelas 'M' menunjukkan kesalahan klasifikasi tertinggi, sedangkan kelas 'L' diprediksi paling akurat
+     
+## Panduan Menjalankan Proyek
 
+1. Unduh atau clone repository ini ke lokal device kamu.  
+2. Buka file `UAS Kecerdasan Buatan.ipynb` menggunakan Jupyter Notebook atau Google Colab.  
+3. Pastikan file `Students' Academic Performance.csv` sudah ada di dalam folder `Data/`.  
+4. Jalankan semua cell dari awal hingga akhir untuk memperoleh seluruh hasil dan evaluasi model.
 
 ## Referensi Jurnal Ilmiah
 1. Budiman, A., & Ramadina, M. (2015). *Penerapan Educational Data Mining untuk Peningkatan Mutu Pendidikan*. Jurnal Pendidikan dan Teknologi, 2(1), 23–29.
