@@ -42,14 +42,6 @@ Proyek ini dibuat untuk mengembangkan model klasifikasi dalam rangka memprediksi
    - Kelas 'M' menunjukkan kesalahan klasifikasi tertinggi, sedangkan kelas 'L' diprediksi paling akurat
 
 
-## Cara Menjalankan Proyek
-
-1. Download atau clone repositori ini ke perangkat lokal kamu.
-2. Buka file `UAS Kecerdasan Buatan.ipynb` menggunakan Google Colab atau Jupyter Notebook.
-3. Pastikan file dataset `Students' Academic Performance.csv` telah diletakkan di dalam folder `Data/`.
-4. Jalankan seluruh kode dari atas sampai bawah untuk melihat hasil analisis dan evaluasi model prediksi.
-
-
 ## Referensi Jurnal Ilmiah
 1. Budiman, A., & Ramadina, M. (2015). *Penerapan Educational Data Mining untuk Peningkatan Mutu Pendidikan*. Jurnal Pendidikan dan Teknologi, 2(1), 23–29.
 
@@ -61,9 +53,3 @@ Proyek ini dibuat untuk mengembangkan model klasifikasi dalam rangka memprediksi
 
 5. Sari, P., & Wibowo, B. (2021). *Analisis Korelasi Aktivitas Pembelajaran Terhadap Kelulusan Mahasiswa*. Jurnal Pendidikan dan Teknologi Digital, 7(2), 88–95.
 
-
-## Keterangan Tambahan
-
-- File laporan utama tersedia dalam bentuk PDF dengan nama `Laporan Proyek Machine Learning.pdf`.  
-- Referensi jurnal ilmiah disimpan dalam subfolder `Data`.  
-- Jika mengalami kendala saat menjalankan kode, bisa hubungi melalui tab Issues di repository ini.
